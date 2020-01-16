@@ -216,4 +216,14 @@ if(NOT TBB_FOUND)
   
   mark_as_advanced(TBB_INCLUDE_DIRS TBB_LIBRARIES)
 
+  add_library(TBB::tbb UNKNOWN IMPORTED)
+
+  set_target_properties(
+      TBB::tbb
+    PROPERTIES
+      IMPORTED_LINK_INTERFACE_LANGUAGES "CXX"
+      IMPORTED_LOCATION ${TBB_tbb_LIBRARY_RELEASE}
+      INTERFACE_INCLUDE_DIRECTORIES  ${TBB_INCLUDE_DIRS}
+  )
+
 endif()
