@@ -21,7 +21,7 @@
 # language governing permissions and limitations under the Apache License.
 
 find_library(TBB REQUIRED)
-find_package(Python CONFIG REQUIRED)
+find_package(Python COMPONENTS Development REQUIRED)
 find_package(Boost COMPONENTS python thread system regex REQUIRED)
 
 
